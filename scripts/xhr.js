@@ -23,6 +23,3 @@ function getPostalCode (event) {
 }
 
 document.querySelector('form').addEventListener('submit', getPostalCode)
-
-var row = document.createElement('tr')
-var address = document.createElement('td')
