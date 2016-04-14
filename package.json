@@ -1,0 +1,32 @@
+{
+  "name": "postal-codes-sg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server dist/",
+    "build": "watchify -t [ babelify --presets [ react ] ] src/*.js -o dist/bundle.js",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsstrn/postal-codes-sg.git"
+  },
+  "keywords": [],
+  "author": "Jesstern Rays",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsstrn/postal-codes-sg/issues"
+  },
+  "homepage": "https://github.com/jsstrn/postal-codes-sg#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
+  },
+  "devDependencies": {
+    "watchify": "^3.7.0"
+  }
+}
