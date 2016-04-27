@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server dist/",
-    "build": "watchify -t [ babelify --presets [ react ] ] src/*.js -o dist/bundle.js",
+    "start:d": "npm run build:w & npm start",
+    "build": "browserify -t [ babelify ] src/*.js -o dist/bundle.js",
+    "build:w": "watchify -t [ babelify ] src/*.js -o dist/bundle.js",
     "test": "standard"
   },
   "repository": {
@@ -20,13 +22,17 @@
   },
   "homepage": "https://github.com/jsstrn/postal-codes-sg#readme",
   "dependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "underscore": "^1.8.3",
+    "whatwg-fetch": "^0.11.0"
+  },
+  "devDependencies": {
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1"
-  },
-  "devDependencies": {
+    "babel-preset-es2015": "^6.6.0",
+    "standard": "^6.0.8",
     "watchify": "^3.7.0"
   }
 }
