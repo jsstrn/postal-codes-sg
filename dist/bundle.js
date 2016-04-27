@@ -19860,13 +19860,6 @@ var HeaderComponent = function (_React$Component) {
   }
 
   _createClass(HeaderComponent, [{
-    key: 'propTypes',
-    value: function propTypes() {
-      return {
-        title: _react2.default.PropTypes.string
-      };
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -19884,6 +19877,12 @@ var HeaderComponent = function (_React$Component) {
   return HeaderComponent;
 }(_react2.default.Component);
 
+HeaderComponent.defaultProps = {
+  title: 'Default Heading'
+};
+HeaderComponent.propTypes = {
+  title: _react2.default.PropTypes.string.isRequired
+};
 exports.default = HeaderComponent;
 
 },{"react":165}],170:[function(require,module,exports){
@@ -19899,9 +19898,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _results = require('./results');
+var _result = require('./result');
 
-var _results2 = _interopRequireDefault(_results);
+var _result2 = _interopRequireDefault(_result);
 
 require('whatwg-fetch');
 
@@ -19917,9 +19916,19 @@ var MainComponent = function (_React$Component) {
   _inherits(MainComponent, _React$Component);
 
   function MainComponent() {
+    var _Object$getPrototypeO;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, MainComponent);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(MainComponent).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(MainComponent)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+      results: []
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(MainComponent, [{
@@ -19963,6 +19972,9 @@ var MainComponent = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var components = [];
+      var component = _react2.default.createElement(_result2.default, { data: 5 });
+      components.push(component);
       return _react2.default.createElement(
         'main',
         null,
@@ -19976,7 +19988,7 @@ var MainComponent = function (_React$Component) {
             'Get Postal Code'
           )
         ),
-        _react2.default.createElement(_results2.default, { data: 'hi' })
+        _react2.default.createElement(_result2.default, { data: 'hi' })
       );
     }
   }]);
@@ -19986,7 +19998,7 @@ var MainComponent = function (_React$Component) {
 
 exports.default = MainComponent;
 
-},{"./results":171,"react":165,"whatwg-fetch":166}],171:[function(require,module,exports){
+},{"./result":171,"react":165,"whatwg-fetch":166}],171:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20007,16 +20019,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ResultsComponent = function (_React$Component) {
-  _inherits(ResultsComponent, _React$Component);
+var ResultComponent = function (_React$Component) {
+  _inherits(ResultComponent, _React$Component);
 
-  function ResultsComponent() {
-    _classCallCheck(this, ResultsComponent);
+  function ResultComponent() {
+    _classCallCheck(this, ResultComponent);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(ResultsComponent).apply(this, arguments));
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(ResultComponent).apply(this, arguments));
   }
 
-  _createClass(ResultsComponent, [{
+  _createClass(ResultComponent, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -20066,9 +20078,9 @@ var ResultsComponent = function (_React$Component) {
     }
   }]);
 
-  return ResultsComponent;
+  return ResultComponent;
 }(_react2.default.Component);
 
-exports.default = ResultsComponent;
+exports.default = ResultComponent;
 
 },{"react":165}]},{},[167,168,169,170,171]);

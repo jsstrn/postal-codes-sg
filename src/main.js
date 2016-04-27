@@ -1,8 +1,12 @@
 import React from 'react'
-import ResultsComponent from './results'
+import ResultComponent from './result'
 import 'whatwg-fetch'
 
 export default class MainComponent extends React.Component {
+  state = {
+    results: []
+  }
+
   getURL (query) {
     const parameter = '?&address=' + encodeURI(query)
     return 'http://maps.googleapis.com/maps/api/geocode/json' + parameter
@@ -37,13 +41,16 @@ export default class MainComponent extends React.Component {
   }
 
   render () {
+    const components = []
+    const component = <ResultComponent data={5} />
+    components.push(component)
     return (
       <main>
         <form onSubmit={this.getPostalCode.bind(this)}>
           <input type='text' defaultValue='1 Keong Saik Road' />
           <button type='submit'>Get Postal Code</button>
         </form>
-        <ResultsComponent data={'hi'} />
+        <ResultComponent data={'hi'} />
       </main>
     )
   }

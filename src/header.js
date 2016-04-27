@@ -1,10 +1,11 @@
 import React from 'react'
 
 export default class HeaderComponent extends React.Component {
-  propTypes () {
-    return {
-      title: React.PropTypes.string
-    }
+  static defaultProps = {
+    title: 'Default Heading'
+  }
+  static propTypes = {
+    title: React.PropTypes.string.isRequired
   }
   render () {
     return (
