@@ -19763,73 +19763,16 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _header = require('./header');
-
-var _header2 = _interopRequireDefault(_header);
-
 var _main = require('./main');
 
 var _main2 = _interopRequireDefault(_main);
 
-var _footer = require('./footer');
-
-var _footer2 = _interopRequireDefault(_footer);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = document.getElementById('app');
+_reactDom2.default.render(_react2.default.createElement(_main2.default, null), app);
 
-_reactDom2.default.render(_react2.default.createElement(
-  'div',
-  null,
-  _react2.default.createElement(_header2.default, { title: 'Postal Codes - Singapore' }),
-  _react2.default.createElement(_main2.default, null),
-  _react2.default.createElement(_footer2.default, { copyright: 'Copyright (c) 2016' })
-), app);
-
-},{"./footer":168,"./header":169,"./main":170,"react":165,"react-dom":29}],168:[function(require,module,exports){
-'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var React = require('react');
-
-var FooterComponent = function (_React$Component) {
-  _inherits(FooterComponent, _React$Component);
-
-  function FooterComponent() {
-    _classCallCheck(this, FooterComponent);
-
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(FooterComponent).apply(this, arguments));
-  }
-
-  _createClass(FooterComponent, [{
-    key: 'render',
-    value: function render() {
-      return React.createElement(
-        'footer',
-        null,
-        React.createElement(
-          'p',
-          null,
-          this.props.copyright
-        )
-      );
-    }
-  }]);
-
-  return FooterComponent;
-}(React.Component);
-
-module.exports = FooterComponent;
-
-},{"react":165}],169:[function(require,module,exports){
+},{"./main":168,"react":165,"react-dom":29}],168:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -19838,61 +19781,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var HeaderComponent = function (_React$Component) {
-  _inherits(HeaderComponent, _React$Component);
-
-  function HeaderComponent() {
-    _classCallCheck(this, HeaderComponent);
-
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderComponent).apply(this, arguments));
-  }
-
-  _createClass(HeaderComponent, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'header',
-        null,
-        _react2.default.createElement(
-          'h1',
-          null,
-          this.props.title
-        )
-      );
-    }
-  }]);
-
-  return HeaderComponent;
-}(_react2.default.Component);
-
-HeaderComponent.defaultProps = {
-  title: 'Default Heading'
-};
-HeaderComponent.propTypes = {
-  title: _react2.default.PropTypes.string.isRequired
-};
-exports.default = HeaderComponent;
-
-},{"react":165}],170:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+require('whatwg-fetch');
 
 var _react = require('react');
 
@@ -19901,8 +19790,6 @@ var _react2 = _interopRequireDefault(_react);
 var _result = require('./result');
 
 var _result2 = _interopRequireDefault(_result);
-
-require('whatwg-fetch');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19916,19 +19803,14 @@ var MainComponent = function (_React$Component) {
   _inherits(MainComponent, _React$Component);
 
   function MainComponent() {
-    var _Object$getPrototypeO;
-
-    var _temp, _this, _ret;
-
     _classCallCheck(this, MainComponent);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MainComponent).call(this));
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(MainComponent)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+    _this.state = {
       results: []
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    };
+    return _this;
   }
 
   _createClass(MainComponent, [{
@@ -19949,6 +19831,7 @@ var MainComponent = function (_React$Component) {
       window.fetch(url).then(function (res) {
         return res.json();
       }).then(function (data) {
+        _this2.setState({ results: [] });
         if (data.status === 'OK') _this2.formatData(data);else console.log('Could not get results, please try again later.');
       }).catch(function (err) {
         return console.log(err);
@@ -19957,24 +19840,21 @@ var MainComponent = function (_React$Component) {
   }, {
     key: 'formatData',
     value: function formatData(data) {
-      console.log(data);
-      var results = [];
+      var _this3 = this;
+
       data.results.forEach(function (result) {
-        results.push({
-          postal_code: result.address_components[5].long_name,
+        _this3.state.results.push({
+          postal_code: result.address_components.pop().long_name,
           address: result.formatted_address,
           lat: result.geometry.location.lat,
           lng: result.geometry.location.lng
         });
       });
-      console.log(results);
+      this.setState(this.state);
     }
   }, {
     key: 'render',
     value: function render() {
-      var components = [];
-      var component = _react2.default.createElement(_result2.default, { data: 5 });
-      components.push(component);
       return _react2.default.createElement(
         'main',
         null,
@@ -19988,7 +19868,9 @@ var MainComponent = function (_React$Component) {
             'Get Postal Code'
           )
         ),
-        _react2.default.createElement(_result2.default, { data: 'hi' })
+        this.state.results.map(function (result, index) {
+          return _react2.default.createElement(_result2.default, { data: result, key: index });
+        })
       );
     }
   }]);
@@ -19998,7 +19880,7 @@ var MainComponent = function (_React$Component) {
 
 exports.default = MainComponent;
 
-},{"./result":171,"react":165,"whatwg-fetch":166}],171:[function(require,module,exports){
+},{"./result":169,"react":165,"whatwg-fetch":166}],169:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -20041,7 +19923,7 @@ var ResultComponent = function (_React$Component) {
           _react2.default.createElement(
             'span',
             null,
-            '1 Keong Saik Road'
+            this.props.data.address
           )
         ),
         _react2.default.createElement(
@@ -20051,7 +19933,7 @@ var ResultComponent = function (_React$Component) {
           _react2.default.createElement(
             'span',
             null,
-            '089109'
+            this.props.data.postal_code
           )
         ),
         _react2.default.createElement(
@@ -20061,7 +19943,7 @@ var ResultComponent = function (_React$Component) {
           _react2.default.createElement(
             'span',
             null,
-            'ABCDEFG'
+            this.props.data.lat
           )
         ),
         _react2.default.createElement(
@@ -20071,7 +19953,7 @@ var ResultComponent = function (_React$Component) {
           _react2.default.createElement(
             'span',
             null,
-            '123456789'
+            this.props.data.lng
           )
         )
       );
@@ -20081,6 +19963,9 @@ var ResultComponent = function (_React$Component) {
   return ResultComponent;
 }(_react2.default.Component);
 
+ResultComponent.propTypes = {
+  data: _react2.default.PropTypes.object.isRequired
+};
 exports.default = ResultComponent;
 
-},{"react":165}]},{},[167,168,169,170,171]);
+},{"react":165}]},{},[167,168,169]);

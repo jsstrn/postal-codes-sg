@@ -23,6 +23,7 @@
   "homepage": "https://github.com/jsstrn/postal-codes-sg#readme",
   "dependencies": {
     "react": "^15.0.1",
+    "react-addons": "^0.9.1-deprecated",
     "react-dom": "^15.0.1",
     "underscore": "^1.8.3",
     "whatwg-fetch": "^0.11.0"

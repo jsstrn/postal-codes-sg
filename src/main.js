@@ -1,10 +1,13 @@
+import 'whatwg-fetch'
 import React from 'react'
 import ResultComponent from './result'
-import 'whatwg-fetch'
 
 export default class MainComponent extends React.Component {
-  state = {
-    results: []
+  constructor () {
+    super()
+    this.state = {
+      results: []
+    }
   }
 
   getURL (query) {
@@ -20,6 +23,7 @@ export default class MainComponent extends React.Component {
     window.fetch(url)
       .then(res => res.json())
       .then(data => {
+        this.setState({results: []})
         if (data.status === 'OK') this.formatData(data)
         else console.log('Could not get results, please try again later.')
       })
@@ -27,30 +31,27 @@ export default class MainComponent extends React.Component {
   }
 
   formatData (data) {
-    console.log(data)
-    const results = []
     data.results.forEach((result) => {
-      results.push({
-        postal_code: result.address_components[5].long_name,
+      this.state.results.push({
+        postal_code: result.address_components.pop().long_name,
         address: result.formatted_address,
         lat: result.geometry.location.lat,
         lng: result.geometry.location.lng
       })
     })
-    console.log(results)
+    this.setState(this.state)
   }
 
   render () {
-    const components = []
-    const component = <ResultComponent data={5} />
-    components.push(component)
     return (
       <main>
         <form onSubmit={this.getPostalCode.bind(this)}>
           <input type='text' defaultValue='1 Keong Saik Road' />
           <button type='submit'>Get Postal Code</button>
         </form>
-        <ResultComponent data={'hi'} />
+        {this.state.results.map((result, index) => {
+          return <ResultComponent data={result} key={index} />
+        })}
       </main>
     )
   }
